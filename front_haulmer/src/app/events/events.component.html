@@ -1,0 +1,20 @@
+<div class="container">
+  @for (post of events; track post.id) {
+  <div class="row justify-content-center">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ post.location }}</h6>
+          <a [routerLink]="['/events', post.id]" class="btn btn-primary"
+            >Ver detalles</a
+          >
+          <a [routerLink]="['/purchase', post.id]" class="btn btn-secondary"
+            >Comprar Ticket</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
