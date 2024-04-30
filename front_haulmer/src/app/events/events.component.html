@@ -1,20 +1,24 @@
-<div class="container">
-  @for (post of events; track post.id) {
-  <div class="row justify-content-center">
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ post.location }}</h6>
-          <a [routerLink]="['/events', post.id]" class="btn btn-primary"
-            >Ver detalles</a
-          >
-          <a [routerLink]="['/purchase', post.id]" class="btn btn-secondary"
-            >Comprar Ticket</a
-          >
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="mt-5"> <!-- Agregamos un poco de margen superior para mejorar la apariencia -->
+        <div *ngIf="flag" class="alert alert-success" role="alert">Compra registrada con éxito!</div>
+        <div *ngIf="flag_error" class="alert alert-danger" role="alert">Ocurrió un problema con su compra</div>
+        <div class="row justify-content-center">
+          @for (post of events; track post.id) {
+            <div class="col-md-6 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ post.name }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ post.location }}</h6>
+                  <a [routerLink]="['/events', post.id]" class="btn btn-primary mx-2">Ver detalles</a>
+                  <a (click)="postPurchase(post.id)" class="btn btn-success">Comprar Ticket</a>
+                </div>
+              </div>
+            </div>
+          }
         </div>
       </div>
     </div>
   </div>
-  }
 </div>

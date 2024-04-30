@@ -32,7 +32,6 @@ export class EventDetailComponent implements OnInit {
     this.httpClient
       .get<Event>('http://127.0.0.1:8000/event/' + id)
       .subscribe((data) => {
-        console.log(data);
         this.event = data;
       });
   }
