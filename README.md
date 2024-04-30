@@ -1,10 +1,10 @@
 # test_haulmer
 
-Requerimientos
-Angular CLI: 17.3.6
-Node: 22.0.0 
-PHP 8.2.12
-Composer
+Requerimientos\n
+Angular CLI: 17.3.6\n
+Node: 22.0.0\n
+PHP 8.2.12\n
+Composer\n
 XAMPP(windows)
 
 Se optó por utilizar mockApi en lugar de sqlite, ya que este último no tiene persistencia de información al ser local, por otro lado mockApi no es bueno si se cuenta con una cantidad alta de información, sin embargo al ser solo un caso de prueba se consideró poco importante esto último.
